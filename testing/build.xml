@@ -1,0 +1,19 @@
+<project name="testing" basedir="." default="mkdir">
+
+<property name="folder" value="E:\jenkins"/>
+<property name="class" value="E:\class"/>
+<property name="copy" value="E:\pavan\testing"/>
+
+<target name="mkdir" description="create jenkins folder">
+<delete dir="${folder}"/>
+<mkdir dir="${folder}"/>
+<copydir src="${copy}" dest="${folder}"/>
+</target>
+
+<target name="create" description="create jenkins folder">
+<mkdir dir="${class}"/>
+<javac srcdir="${copy}" destdir="${class}"/>
+<copydir src="${copy}" dest="${folder}"/>
+</target>
+
+</project>
